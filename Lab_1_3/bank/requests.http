@@ -1,0 +1,67 @@
+### List all customers
+GET http://localhost:8080/api/v1/customers
+
+### Get a single customer
+GET http://localhost:8080/api/v1/customers/C001
+
+### Get a customer that does not exist
+GET http://localhost:8080/api/v1/customers/UNKNOWN
+
+### List all accounts
+GET http://localhost:8080/api/v1/accounts
+
+### Get a single account
+GET http://localhost:8080/api/v1/accounts/ACC-1001
+
+#Transactions
+
+### List all transactions (initially empty)
+GET http://localhost:8080/api/v1/transactions
+
+### Credit $250 to ACC-1001
+POST http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+Content-Type: application/json
+
+{ "type": "CREDIT", "amount": 250.00 }
+
+### Debit $100 from ACC-1001
+POST http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+Content-Type: application/json
+
+{ "type": "DEBIT", "amount": 100.00 }
+
+### List transactions for ACC-1001 (expect two)
+GET http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+
+### Verify the balance changed: 2500.00 + 250.00 - 100.00 = 2650.00
+GET http://localhost:8080/api/v1/accounts/ACC-1001
+
+### Attempt to debit a closed account -- expect 422 (after Exercise 4)
+POST http://localhost:8080/api/v1/accounts/ACC-1005/transactions
+Content-Type: application/json
+
+{ "type": "DEBIT", "amount": 50.00 }
+
+#### Get list of transactions for an account
+GET http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+
+#### Create a new transaction
+POST http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+Content-Type: application/json
+
+{
+  "type": "CREDIT",
+  "amount": 500,
+  "description": "Initial deposit"
+}
+
+#### Create a new transaction
+POST http://localhost:8080/api/v1/accounts/ACC-1001/transactions
+Content-Type: application/json
+
+{
+  "type": "CREDIT",
+  "amount": 300,
+  "description": "Initial deposit"
+}
+

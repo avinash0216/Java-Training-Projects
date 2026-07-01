@@ -1,0 +1,4 @@
+# Overlays application.yml when the 'dev' profile is active
+bank:
+  environment-label: development
+  transaction-limit: 500   # smaller limit so devs trip the rule more often

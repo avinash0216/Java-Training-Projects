@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+    <!-- Project coordinates:
+         - groupId: identifies the project's organization or base package (e.g. com.example)
+         - artifactId: the name of the module or project (e.g. my-service)
+         - version: the current version of the artifact
+         Together they form the Maven coordinates (groupId:artifactId:version) which
+         uniquely identify the artifact in repositories. -->
+    <groupId>com.example</groupId>
+    <artifactId>my-service</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+      <!-- Compiler version properties: setting the Java source/target here centralizes
+           the configuration so plugins (like maven-compiler-plugin) can reference
+           the same values. This makes updates easier and allows parent POMs or
+           build profiles to override the values without changing each plugin config. -->
+      <maven.compiler.source>17</maven.compiler.source>
+      <maven.compiler.target>17</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+      <!-- Testing dependency: JUnit Jupiter is added with scope "test" so it is
+           available during test compilation and execution but is not packaged
+           into the final artifact. -->
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.10.2</version>
+        <!-- The "test" scope means this jar is available during
+             compilation and execution of tests, but is NOT included
+             in the final packaged artifact -->
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </project>

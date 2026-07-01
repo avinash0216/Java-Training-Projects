@@ -1,0 +1,6 @@
+projectKey=com.example:banking-vulnerable-lab
+serverUrl=http://localhost:9090
+serverVersion=26.6.0.123539
+dashboardUrl=http://localhost:9090/dashboard?id=com.example%3Abanking-vulnerable-lab
+ceTaskId=6c34ab09-da4d-460e-a2a8-eb727ee8fb03
+ceTaskUrl=http://localhost:9090/api/ce/task?id=6c34ab09-da4d-460e-a2a8-eb727ee8fb03

@@ -1,0 +1,29 @@
+### Get all accounts (getForObject)
+GET http://localhost:8080/rt/accounts
+
+###
+
+### Get account by ID (getForEntity)
+GET http://localhost:8080/rt/accounts/A001
+
+###
+
+### Get missing account (should return 404)
+GET http://localhost:8080/rt/accounts/A999
+
+###
+
+### Get all accounts (exchange with ParameterizedTypeReference)
+GET http://localhost:8080/rt/accounts/exchange
+
+###
+
+### Create a new account
+POST http://localhost:8080/rt/accounts
+Content-Type: application/json
+
+{
+  "customerId": "C003",
+  "accountType": "SAVINGS",
+  "balance": 0.00
+}

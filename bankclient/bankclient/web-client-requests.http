@@ -1,0 +1,19 @@
+### Get all accounts
+GET http://localhost:8080/wc/accounts
+
+###
+
+### Get account by ID
+GET http://localhost:8080/wc/accounts/A001
+
+###
+
+### Create a new account
+POST http://localhost:8080/wc/accounts
+Content-Type: application/json
+
+{
+  "customerId": "C003",
+  "accountType": "SAVINGS",
+  "balance": 0.00
+}

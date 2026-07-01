@@ -1,0 +1,4 @@
+# Overlays application.yml when the 'prod' profile is active
+bank:
+  environment-label: production
+  daily-limit: 50000       # higher daily limit for production traffic

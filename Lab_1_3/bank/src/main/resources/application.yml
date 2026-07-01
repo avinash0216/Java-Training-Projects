@@ -1,0 +1,17 @@
+# application.yml -- base configuration, loaded in every environment
+spring:
+  application:
+    name: bank-service
+
+server:
+  port: 8080
+
+bank:
+  # Maximum size of a single credit or debit transaction in dollars.
+  # This is a real banking control -- production systems enforce per-transaction
+  # limits to mitigate fraud and operational risk.
+  transaction-limit: 10000
+  # Daily aggregate limit per account, applied across all transactions.
+  daily-limit: 25000
+  # A label identifying which environment this service is running in
+  environment-label: local
